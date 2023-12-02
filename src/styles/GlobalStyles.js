@@ -70,6 +70,10 @@ body {
   line-height: 1;
 }
 
+#root {
+  position: relative;
+}
+
 input,
 button,
 textarea,
@@ -121,7 +125,7 @@ h3,
 h4,
 h5,
 h6 {
-  overflow-wrap: break-word;
+
   hyphens: auto;
 }
 

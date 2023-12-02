@@ -1,5 +1,17 @@
+import AboutMe from "./AboutMe";
+import Hero from "./Hero";
+import Projects from "./Projects";
+import Header from "../../ui/Header";
+
 function Homepage() {
-  return <div>Homepage</div>;
+  return (
+    <>
+      <Header />
+      <Hero />
+      <AboutMe />
+      <Projects />
+    </>
+  );
 }
 
 export default Homepage;
