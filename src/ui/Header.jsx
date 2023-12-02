@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const StyledHeader = styled.header`
   height: 96px;
-  background-color: transparent;
+  background-color: var(--color-grey-900);
   display: flex;
   padding: 0 4.8rem;
   align-items: center;
@@ -12,8 +12,18 @@ const StyledHeader = styled.header`
   left: 0;
   right: 0;
   color: var(--color-grey-50);
+  transform: translateY(-100%);
   transition: all 0.4s ease;
   opacity: 0;
+
+  &.sticky {
+    opacity: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: translateY(0);
+  }
 `;
 
 const Signature = styled.span`
