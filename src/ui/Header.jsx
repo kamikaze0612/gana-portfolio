@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 const StyledHeader = styled.header`
-  height: 96px;
-  background-color: var(--color-grey-900);
+  height: 70px;
+  background-color: rgba(0, 0, 0, 0.85);
   display: flex;
   padding: 0 4.8rem;
   align-items: center;
@@ -15,6 +15,7 @@ const StyledHeader = styled.header`
   transform: translateY(-100%);
   transition: all 0.4s ease;
   opacity: 0;
+  z-index: 20000;
 
   &.sticky {
     opacity: 1;
@@ -28,13 +29,20 @@ const StyledHeader = styled.header`
 
 const Signature = styled.span`
   font-size: 2.4rem;
+  color: var(--color-grey-0);
+
+  @media only screen and (max-width: 80em) {
+    font-size: 2rem;
+  }
 `;
 
-const Navbar = styled.nav``;
+const Navbar = styled.nav`
+  height: 100%;
+`;
 
 const Navlist = styled.ul`
   display: flex;
-  gap: 3.2rem;
+  height: 100%;
 `;
 
 const Navlink = styled.a`
@@ -42,6 +50,26 @@ const Navlink = styled.a`
   &:visited {
     text-decoration: none;
     font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 1.6rem;
+
+    @media only screen and (max-width: 80em) {
+      font-size: 1.6rem;
+    }
+
+    @media only screen and (max-width: 64em) {
+      font-size: 1.4rem;
+    }
+  }
+
+  &:hover,
+  &:active {
+    color: var(--color-grey-900);
+    background-color: var(--color-grey-0);
   }
 `;
 
@@ -52,17 +80,17 @@ const Something = styled.span`
 function Header() {
   return (
     <StyledHeader>
-      <Signature>Gana</Signature>
+      <Signature>gana.</Signature>
       <Navbar>
         <Navlist>
           <li>
-            <Navlink href="#">About me</Navlink>
+            <Navlink href="#about">About me</Navlink>
           </li>
           <li>
-            <Navlink href="#">Projects</Navlink>
+            <Navlink href="#projects">Projects</Navlink>
           </li>
           <li>
-            <Navlink href="#">Contact me</Navlink>
+            <Navlink href="#contact">Contact me</Navlink>
           </li>
         </Navlist>
       </Navbar>

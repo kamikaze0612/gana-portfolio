@@ -15,6 +15,20 @@ const StyledProject = styled.div`
   }
 `;
 
+const ProjectImg = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: brightness(0.7);
+  transition: all 0.2s ease;
+
+  &:hover {
+    filter: brightness(1);
+    transform: scale(1.03);
+  }
+`;
+
 const Title = styled.h3`
   font-size: 2.4rem;
   max-width: 80%;
@@ -24,12 +38,27 @@ const Title = styled.h3`
   right: 2rem;
   transform: translateX(120%);
   opacity: 0;
-  transition: all 0.3s ease-out;
+  transition: all 0.2s ease-out;
   letter-spacing: 2px;
-  color: var(--color-grey-0);
+  color: black;
+  line-height: 1.2;
+
+  @media (hover: none) {
+    transform: translateX(0);
+    opacity: 1;
+    color: var(--color-grey-50);
+  }
+
+  @media only screen and (max-width: 80em) {
+    font-size: 1.8rem;
+  }
+
+  @media only screen and (max-width: 64em) {
+    font-size: 1.4rem;
+  }
 `;
 
-function ProjectItem({ color, title }) {
+function ProjectItem({ img, title }) {
   const navigate = useNavigate();
 
   return (
@@ -37,8 +66,8 @@ function ProjectItem({ color, title }) {
       onClick={() => {
         navigate("/project");
       }}
-      bgColor={color}
     >
+      <ProjectImg src={img} alt={title} />
       <Title>{title}</Title>
     </StyledProject>
   );

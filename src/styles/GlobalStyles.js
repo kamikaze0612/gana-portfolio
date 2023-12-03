@@ -62,6 +62,14 @@ const GlobalStyles = createGlobalStyle`
 
 html {
   font-size: 62.5%;
+
+  @media only screen and (max-width: 90em) {
+    font-size: 56.25%;
+  }
+
+  @media only screen and (max-width: 48em) {
+    font-size: 50%;
+  }
 }
 
 body {
@@ -72,6 +80,10 @@ body {
 
 #root {
   position: relative;
+}
+
+#root > section {
+  scroll-margin-top: 70px;
 }
 
 input,
@@ -131,6 +143,23 @@ h6 {
 
 img {
   max-width: 100%;
+
+@keyframes appear-from-bottom {
+  0% {
+    opacity: 0;
+    transform: translateY(10rem);
+  }
+
+  80% {
+    opacity: 0.9;
+    transform: translateY(-2rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 }
 `;
 
